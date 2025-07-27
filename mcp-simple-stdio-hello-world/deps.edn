@@ -1,0 +1,4 @@
+{:paths ["src"]
+ :deps {et/vp {:local/root "../vesicapiscis"}
+        cheshire/cheshire {:mvn/version "5.12.0"}}
+ :aliases {:run {:main-opts ["-m" "server"]}}}

@@ -1,0 +1,1 @@
+# Clojure Claude & MCP Knowledge
