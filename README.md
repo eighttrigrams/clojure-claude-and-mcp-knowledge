@@ -1,5 +1,8 @@
 # Clojure Claude & MCP Knowledge
 
+See also 
+- [bhauman/clojure-mcp](https://github.com/bhauman/clojure-mcp).
+
 As developers we want to get the most out of our tools,
 and for the current generation of LLM-based AI tools like **Claude** 
 that means extending them via *MCP*. 
