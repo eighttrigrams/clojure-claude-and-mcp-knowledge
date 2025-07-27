@@ -34,3 +34,37 @@ On the other hand, some artifacts like your local `~/.claude.md` are shared and 
 MCP allows you to write tools to which your LLM has access to. In this repository, we find two examples, one
 using plain Clojure, one using the Java based modelcontextprotocol SDK. These examples are intended to be minimal.
 They are designed to help you to get started with writing your own MCPs.
+
+### MCP in Claude Code
+
+MCPs are named and point to commands:
+
+```sh
+$ claude mcp add <your_mcp_name> -- <command to run your mcp>
+```
+
+Running clojure MCPs seems to work best by wrapping them in a short `run.sh` script:
+
+```bash
+#!/bin/bash
+cd "$(dirname "$0")"
+clojure -M:run
+```
+
+Corresponding exerpt from a `deps.edn` pointing to a `server` entry namespace with a `-main` function.
+
+```clojure
+:aliases {:run {:main-opts ["-m" "server"]}}
+```
+
+MCPs can be removed again with:
+
+```sh
+$ claude mcp remove <your_mcp_name>
+```
+
+
+MCPs in Claude Code are scoped. When adding an MCP in a folder, don't expect the MCP to be automatically 
+available when you call Claude Code from another folder higher up next time.
+
+To check whether things work fine, use the `/mcp` command in Claude Code.
