@@ -19,13 +19,13 @@ code or code-like artifacts on your file system and helping you develop running 
 do research, similar to ChatGPT. It runs on your desktop, however, to exploit the full benefits
 of having access to your local system (if you allow it).
 
-For Claude Desktop you need to signup for a Pro or Max subscription (can be done monthly) to which
-various rate limits apply depending on the options you chose. Claude Code can share that subscription
-with Desktop and both together share the assigned usage quotas. However, if you only intend to use Claude
-Code you might want to simply buy API credits on console.anthropic.com.
+For *Claude Desktop* you need to signup for a Pro or Max subscription (can be done monthly) to which
+various rate limits apply depending on the options you chose. *Claude Code* can share that subscription
+with Desktop and both together share the assigned usage quotas. However, if you only intend to use*Claude
+Code* you might want to simply buy API credits on console.anthropic.com.
 
-Both Claude Code and Desktop can run on the same system, but don't share all their configuration files. So don't expect
-things you configure in Code to be automatically available to Desktop for example.
+Both *Claude Code* and *Desktop* can run on the same system, but don't share all their configuration files. So don't expect
+things you configure in *Code* to be automatically available to *Desktop* for example.
 
 On the other hand, some artifacts like your local `~/.claude.md` are shared and read by both installations.
 
@@ -63,7 +63,7 @@ MCPs can be removed again with:
 $ claude mcp remove <your_mcp_name>
 ```
 
-MCPs in Claude Code are scoped. When adding an MCP in a folder, don't expect the MCP to be automatically 
+MCPs in Claude Code are *scoped*. When adding an MCP in a folder, don't expect the MCP to be automatically 
 available when you call Claude Code from another folder higher up next time.
 
 To check whether things work fine, use the `/mcp` command in Claude Code.
