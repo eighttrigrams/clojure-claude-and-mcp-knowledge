@@ -1,7 +1,8 @@
 # Clojure Claude & MCP Knowledge
 
 See also 
-- [bhauman/clojure-mcp](https://github.com/bhauman/clojure-mcp).
+- [bhauman/clojure-mcp](https://github.com/bhauman/clojure-mcp)
+- [eighttrigrams/tracker-mcp](https://github.com/eighttrigrams/tracker-mcp)
 
 As developers we want to get the most out of our tools,
 and for the current generation of LLM-based AI tools like **Claude** 
@@ -34,6 +35,28 @@ On the other hand, some artifacts like your local `~/.claude.md` are shared and 
 MCP allows you to write tools to which your LLM has access to. In this repository, we find two examples, one
 using plain Clojure, one using the Java based modelcontextprotocol SDK. These examples are intended to be minimal.
 They are designed to help you to get started with writing your own MCPs.
+
+In general, developing an MCP works in a loop with ongoing communication via `stdin` and `stdout`. So make sure that
+any logging that would happen anywhere in your MCP server should either go to `stderr` or to a logfile, such that
+the **pitfall** of pollution of the output is circumvented.
+
+### MCP in Claude Desktop
+
+Add this configuration to your Claude Desktop MCP settings file.
+To find the configuration file use the MacOS operating system's menu  "Claude ->> Settings" then 
+navigate inside Claude via "Developer" section to **Edit Config**. 
+It will open the containing folder of `claude_desktop_config.json` in Finder. There is also
+a **Open Logs Folder** button in which logs are stored (useful for debugging your MCPs under development).
+
+```json
+{
+  "mcpServers": {
+    "weather": {
+      "command": "/absolute/path/to/run.sh"
+    }
+  }
+}
+```
 
 ### MCP in Claude Code
 
@@ -74,21 +97,3 @@ To check whether things work fine, use the `/mcp` command in Claude Code.
 ```
 
 If it says anything else, like "connecting", something is definitely wrong.
-
-### MCP in Claude Desktop
-
-Add this configuration to your Claude Desktop MCP settings file.
-To find the configuration file use the MacOS operating system's menu  "Claude ->> Settings" then 
-navigate inside Claude via "Developer" section to **Edit Config**. 
-It will open the containing folder of `claude_desktop_config.json` in Finder. There is also
-a **Open Logs Folder** button in which logs are stored (useful for debugging your MCPs under development).
-
-```json
-{
-  "mcpServers": {
-    "weather": {
-      "command": "/absolute/path/to/run.sh"
-    }
-  }
-}
-```
