@@ -1,6 +1,40 @@
 (ns server
-  (:require [cheshire.core :as json] 
-            tools))
+  (:require [cheshire.core :as json]))
+
+(def fake-current-weather-responses
+  ["Current weather: Sunny and warm, 22°C with light winds from the southwest"
+   "Current weather: Partly cloudy, 18°C with moderate humidity and calm conditions"
+   "Current weather: Overcast with light rain, 15°C and gusty winds from the northwest"
+   "Current weather: Clear skies, 25°C with low humidity and gentle breeze"
+   "Current weather: Foggy conditions, 12°C with high humidity and very light winds"])
+
+(defn- get-random-weather
+  "Get a random fake weather response"
+  [responses]
+  (rand-nth responses))
+
+(def tools-list 
+  {:get-current-weather
+   {:name "get_current_weather"
+    :description "Get current weather conditions for a specific location"
+    :inputSchema
+    {:type "object"
+     :properties
+     {:latitude {:type "number"
+                 :description "Latitude coordinate"}
+      :longitude {:type "number" 
+                  :description "Longitude coordinate"}}
+     :required ["latitude" "longitude"]}}})
+
+(defn get-current-weather [{:keys [latitude longitude] :as _arguments}]
+  (let [weather (get-random-weather fake-current-weather-responses)]
+    {:weather weather
+     :location {:latitude latitude :longitude longitude}}))
+
+(defn map-tool [name]
+  (case name
+    "get_current_weather" get-current-weather
+    nil))
 
 (defn handle-request [request]
   (let [method (:method request)
@@ -11,14 +45,14 @@
        (= method "initialize")
        {:result {:protocolVersion "2024-11-05"
                  :capabilities    {:tools {}}  ;; Just declare "we have tools"
-                 :serverInfo      {:name    "tracker-mcp"
+                 :serverInfo      {:name    "weather-mcp"
                                    :version "1.0.0"}}}
        (= method "tools/list")
-       {:result  {:tools (mapv second tools/tools-list)}}
+       {:result  {:tools (mapv second tools-list)}}
        (= method "tools/call")
        (let [tool-name (get-in params [:name])
              arguments (get-in params [:arguments])
-             f (tools/map-tool tool-name)]
+             f (map-tool tool-name)]
          (if f 
            (let [result (try (f arguments)
                              (catch IllegalArgumentException e
