@@ -43,7 +43,7 @@ MCPs are named and point to commands:
 $ claude mcp add <your_mcp_name> -- <command to run your mcp>
 ```
 
-Running clojure MCPs seems to work best by wrapping them in a short `run.sh` script:
+Running clojure MCPs seems to work best by wrapping them in a short `run.sh` script (don't forget to chmod+x it!):
 
 ```bash
 #!/bin/bash
