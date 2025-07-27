@@ -37,13 +37,17 @@ clojure -M:run
 
 ### Integrating with Claude Desktop
 
-1. Add this configuration to your Claude Desktop MCP settings file:
+Add this configuration to your Claude Desktop MCP settings file.
+To find the configuration file use the MacOS operating system's menu  "Claude ->> Settings" then 
+navigate inside Claude via "Developer" section to **Edit Config**. 
+It will open the containing folder of `claude_desktop_config.json` in Finder. There is also
+a **Open Logs Folder** button in which logs are stored (useful for debugging your MCPs under development).
 
 ```json
 {
   "mcpServers": {
     "weather": {
-      "command": "/Users/daniel/Workspace/eighttrigrams/clojure-claude-and-mcp-knowledge/clojure-mcp/run.sh"
+      "command": "/Users/daniel/Workspace/eighttrigrams/clojure-claude-and-mcp-knowledge/mcp-protocol-sdk-hello-world/run.sh"
     }
   }
 }
@@ -52,6 +56,6 @@ clojure -M:run
 ### Integrating with Claude Code
 
 ```sh
-$ claude mcp add weather -- /Users/daniel/Workspace/eighttrigrams/clojure-claude-and-mcp-knowledge/clojure-mcp/run.sh # or
-$ claude mcp add weather -- sh /Users/daniel/Workspace/eighttrigrams/clojure-claude-and-mcp-knowledge/clojure-mcp/run.sh
+$ claude mcp add weather -- /Users/daniel/Workspace/eighttrigrams/clojure-claude-and-mcp-knowledge/mcp-protocol-sdk-hello-world/run.sh # or
+$ claude mcp add weather -- sh /Users/daniel/Workspace/eighttrigrams/clojure-claude-and-mcp-knowledge/mcp-protocol-sdk-hello-world/run.sh
 ```
