@@ -43,7 +43,7 @@ clojure -M:run
 {
   "mcpServers": {
     "weather": {
-      "command": "/Users/daniel/Workspace/eighttrigrams/tracker.project/clojure-mcp/run.sh"
+      "command": "/Users/daniel/Workspace/eighttrigrams/clojure-claude-and-mcp-knowledge/clojure-mcp/run.sh"
     }
   }
 }
@@ -52,6 +52,6 @@ clojure -M:run
 ### Integrating with Claude Code
 
 ```sh
-$ claude mcp add weather -- /Users/daniel/Workspace/eighttrigrams/tracker.project/clojure-mcp/run.sh # or
-$ claude mcp add weather -- sh /Users/daniel/Workspace/eighttrigrams/tracker.project/clojure-mcp/run.sh
+$ claude mcp add weather -- /Users/daniel/Workspace/eighttrigrams/clojure-claude-and-mcp-knowledge/clojure-mcp/run.sh # or
+$ claude mcp add weather -- sh /Users/daniel/Workspace/eighttrigrams/clojure-claude-and-mcp-knowledge/clojure-mcp/run.sh
 ```
