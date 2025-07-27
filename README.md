@@ -74,3 +74,21 @@ To check whether things work fine, use the `/mcp` command in Claude Code.
 ```
 
 If it says anything else, like "connecting", something is definitely wrong.
+
+### MCP in Claude Desktop
+
+Add this configuration to your Claude Desktop MCP settings file.
+To find the configuration file use the MacOS operating system's menu  "Claude ->> Settings" then 
+navigate inside Claude via "Developer" section to **Edit Config**. 
+It will open the containing folder of `claude_desktop_config.json` in Finder. There is also
+a **Open Logs Folder** button in which logs are stored (useful for debugging your MCPs under development).
+
+```json
+{
+  "mcpServers": {
+    "weather": {
+      "command": "/absolute/path/to/run.sh"
+    }
+  }
+}
+```
