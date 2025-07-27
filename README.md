@@ -63,8 +63,14 @@ MCPs can be removed again with:
 $ claude mcp remove <your_mcp_name>
 ```
 
-
 MCPs in Claude Code are scoped. When adding an MCP in a folder, don't expect the MCP to be automatically 
 available when you call Claude Code from another folder higher up next time.
 
 To check whether things work fine, use the `/mcp` command in Claude Code.
+
+```
+│ Manage MCP servers  
+│ ❯ 1. weather  ✔ connected · Enter to view details
+```
+
+If it says anything else, like "connecting", something is definitely wrong.
