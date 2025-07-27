@@ -34,6 +34,7 @@
 (defn map-tool [name]
   (case name
     "get_current_weather" get-current-weather
+    ;; Add more tools here
     nil))
 
 (defn handle-request [request]
