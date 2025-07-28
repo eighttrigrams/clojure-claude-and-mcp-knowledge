@@ -41,7 +41,7 @@ Use
 $ npm install -g @anthropic-ai/claude-code
 ```
 
-as per https://docs.anthropic.com/en/docs/claude-code/setup and choose your account type (see above).
+as per [docs.anthropic.com/en/docs/claude-code/setup](https://docs.anthropic.com/en/docs/claude-code/setup) and choose your account type (see above).
 
 Surprisingly to me, when I opened up a *Claude Code* console inside **VSCode**, it integrated seemlessly and immediately without
 any further setup necessary. For example, it shows diffs then using VSCode editor windows.
