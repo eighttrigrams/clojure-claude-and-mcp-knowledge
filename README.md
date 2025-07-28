@@ -21,9 +21,10 @@ do research, similar to ChatGPT. It runs on your desktop, however, to exploit th
 of having access to your local system (if you allow it).
 
 For *Claude Desktop* you need to signup for a Pro or Max subscription (can be done monthly) to which
-various rate limits apply depending on the options you chose. *Claude Code* can share that subscription
-with Desktop and both together share the assigned usage quotas. However, if you only intend to use*Claude
-Code* you might want to simply buy API credits on console.anthropic.com.
+various rate limits apply depending on the options you chose. This account is also called the ***Claude Chat Account***. *Claude Code* can share that subscription
+with Desktop and both together share the assigned usage quotas. However, if you only intend to use *Claude
+Code* you might want to simply buy API credits on console.anthropic.com. This account is called the ***Anthropic Console Account***. 
+Again, you can choose between those two accounts when using *Claude Code*.
 
 Both *Claude Code* and *Desktop* can run on the same system, but don't share all their configuration files. So don't expect
 things you configure in *Code* to be automatically available to *Desktop* for example.
