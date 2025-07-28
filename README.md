@@ -31,6 +31,21 @@ things you configure in *Code* to be automatically available to *Desktop* for ex
 
 On the other hand, some artifacts like your local `~/.claude.md` are shared and read by both installations.
 
+## Getting started
+
+### Claude Code on Mac
+
+Use
+
+```sh
+$ npm install -g @anthropic-ai/claude-code
+```
+
+as per https://docs.anthropic.com/en/docs/claude-code/setup and choose your account type (see above).
+
+Surprisingly to me, when I opened up a *Claude Code* console inside **VSCode**, it integrated seemlessly and immediately without
+any further setup necessary. For example, it shows diffs then using VSCode editor windows.
+
 ## Clojure MCP development
 
 MCP allows you to write tools to which your LLM has access to. In this repository, we find two examples, one
