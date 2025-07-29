@@ -5,6 +5,7 @@ See also
 - [eighttrigrams/tracker-mcp](https://github.com/eighttrigrams/tracker-mcp)
 - [eighttrigrams/clj-minimals](https://github.com/eighttrigrams/cljc-minimals)
 - [RokLenarcic/mcp-server](https://github.com/RokLenarcic/mcp-server)
+- [Metosin Clojure MCP Demo](https://www.youtube.com/watch?v=F61YWNapxJg)
 
 As developers we want to get the most out of our tools,
 and for the current generation of LLM-based AI tools like **Claude** 
