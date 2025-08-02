@@ -3,8 +3,8 @@
 See also 
 - [bhauman/clojure-mcp](https://github.com/bhauman/clojure-mcp)
 - [Vibe Coding With Clojure-MCP: Bruce Hauman/Luke Burton/Gene Kim](https://www.youtube.com/watch?v=plMpFV5s8nY)
-- [eighttrigrams/tracker-mcp](https://github.com/eighttrigrams/tracker-mcp) my primary use case
-- [eighttrigrams/clj-minimals](https://github.com/eighttrigrams/cljc-minimals) where I collect other minimal examples, things I undertand
+- [eighttrigrams/tracker-mcp](https://github.com/eighttrigrams/tracker-mcp)
+- [eighttrigrams/clj-minimals](https://github.com/eighttrigrams/cljc-minimals)
 - [eighttrigrams/hq-documentation](https://github.com/eighttrigrams/hq-documentation)
 - [RokLenarcic/mcp-server](https://github.com/RokLenarcic/mcp-server)
 - [Metosin Clojure MCP Demo](https://www.youtube.com/watch?v=F61YWNapxJg)
