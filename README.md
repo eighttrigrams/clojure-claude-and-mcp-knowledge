@@ -8,6 +8,7 @@ See also
 - [RokLenarcic/mcp-server](https://github.com/RokLenarcic/mcp-server)
 - [Vibe Coding With Clojure-MCP: Bruce Hauman/Luke Burton/Gene Kim](https://www.youtube.com/watch?v=plMpFV5s8nY)
 - [Metosin Clojure MCP Demo](https://www.youtube.com/watch?v=F61YWNapxJg)
+- [metosin/mcp-toolkit](https://github.com/metosin/mcp-toolkit)
 
 As developers we want to get the most out of our tools,
 and for the current generation of LLM-based AI tools like **Claude** 
