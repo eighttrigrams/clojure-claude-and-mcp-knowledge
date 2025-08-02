@@ -14,7 +14,10 @@ As developers we want to get the most out of our tools,
 and for the current generation of LLM-based AI tools like **Claude** 
 that means extending them via *MCP*. 
 
-This repository should serve as an intro to Claude and MCP development in Clojure.
+This repository should serve as an intro to Claude and MCP development in Clojure. As per my usual philosophy,
+things in the example projects are just laid out in their barest form, without any unnecesary distraction. 
+This is to a) get you going, but keeping the cognitive load light to b) make sure you understand and feel in control about these basics.
+
 Things here have been tested only under MacOS (on an M chip).
 
 ## Claude Code and Claude Desktop
