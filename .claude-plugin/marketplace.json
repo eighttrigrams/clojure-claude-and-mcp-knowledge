@@ -60,8 +60,8 @@
     {
       "name": "plurama",
       "source": "./plugins/plurama",
-      "description": "Conventions for apps composed under the plurama umbrella JVM (e.g. migrations namespacing)",
-      "version": "1.0.0"
+      "description": "Conventions for apps composed under the plurama umbrella JVM (migrations namespacing) and the plurama-cli client for their deployed HTTP APIs",
+      "version": "1.1.0"
     },
     {
       "name": "security",
