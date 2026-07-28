@@ -66,7 +66,3 @@ Using the deployed plurama apps as a user, via `plurama-cli`.
 - [tracker-user](plugins/plurama-user/skills/tracker-user/SKILL.md)
 - [rhizome-user](plugins/plurama-user/skills/rhizome-user/SKILL.md)
 - [rhizome-books](plugins/plurama-user/skills/rhizome-books/SKILL.md)
-
-#### editor-layouts
-
-- [Editor layouts](plugins/editor-layouts/skills/editor-layouts/SKILL.md)

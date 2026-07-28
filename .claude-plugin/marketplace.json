@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Clojure and architecture skills for Claude Code",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "pluginRoot": "./plugins"
   },
   "plugins": [
@@ -26,12 +26,6 @@
       "source": "./plugins/log-tool-calls",
       "description": "A PreToolUse hook that logs every tool invocation to logs/hooks.log",
       "version": "1.1.0"
-    },
-    {
-      "name": "editor-layouts",
-      "source": "./plugins/editor-layouts",
-      "description": "Knowledge about the editor-layouts VS Code extension",
-      "version": "1.0.0"
     },
     {
       "name": "integrations",
