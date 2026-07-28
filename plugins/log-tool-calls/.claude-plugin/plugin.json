@@ -1,7 +1,7 @@
 {
-  "name": "tools",
-  "description": "Reusable tools",
-  "version": "1.0.1",
+  "name": "log-tool-calls",
+  "description": "A PreToolUse hook that logs every tool invocation to logs/hooks.log",
+  "version": "1.1.0",
   "author": {
     "name": "eighttrigrams"
   },

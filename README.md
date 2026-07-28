@@ -54,16 +54,9 @@ Guidelines for structuring code.
 - [Architecture review](plugins/architecture/skills/architecture-review/SKILL.md)
 - [Writing tests](plugins/architecture/skills/writing-tests/SKILL.md)
 
-#### tools
+#### log-tool-calls
 
-Reusable tools — currently a `PreToolUse` hook that logs every tool invocation.
-
-#### rhizome
-
-Skills for working with Rhizome — UI navigation and local REST API.
-
-- [Navigate Rhizome user interface](plugins/rhizome/skills/navigate-rhizome-user-interface/SKILL.md)
-- [Rhizome REST API](plugins/rhizome/skills/rhizome-rest-api/SKILL.md) — development against a local instance
+A `PreToolUse` hook that logs every tool invocation to `logs/hooks.log`.
 
 #### plurama-user
 

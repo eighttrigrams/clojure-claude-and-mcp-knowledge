@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Clojure and architecture skills for Claude Code",
-    "version": "1.0.1",
+    "version": "1.0.4",
     "pluginRoot": "./plugins"
   },
   "plugins": [
@@ -22,28 +22,16 @@
       "version": "1.0.3"
     },
     {
-      "name": "tools",
-      "source": "./plugins/tools",
-      "description": "Reusable tools including tool-use logging",
-      "version": "1.0.1"
+      "name": "log-tool-calls",
+      "source": "./plugins/log-tool-calls",
+      "description": "A PreToolUse hook that logs every tool invocation to logs/hooks.log",
+      "version": "1.1.0"
     },
     {
       "name": "editor-layouts",
       "source": "./plugins/editor-layouts",
       "description": "Knowledge about the editor-layouts VS Code extension",
       "version": "1.0.0"
-    },
-    {
-      "name": "rhizome",
-      "source": "./plugins/rhizome",
-      "description": "Skills for developing Rhizome — UI navigation and its local REST API",
-      "version": "1.1.0"
-    },
-    {
-      "name": "tracker",
-      "source": "./plugins/tracker",
-      "description": "Skills for developing Tracker — its UI and its Telegram bot",
-      "version": "1.1.0"
     },
     {
       "name": "integrations",
@@ -56,12 +44,6 @@
       "source": "./plugins/clojure",
       "description": "General Clojure skills and conventions",
       "version": "1.0.0"
-    },
-    {
-      "name": "plurama",
-      "source": "./plugins/plurama",
-      "description": "Conventions for apps composed under the plurama umbrella JVM (migrations namespacing)",
-      "version": "1.2.0"
     },
     {
       "name": "plurama-user",
