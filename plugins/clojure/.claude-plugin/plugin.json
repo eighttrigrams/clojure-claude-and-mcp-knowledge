@@ -1,8 +1,0 @@
-{
-  "name": "clojure",
-  "description": "General Clojure skills and conventions",
-  "version": "1.0.0",
-  "author": {
-    "name": "eighttrigrams"
-  }
-}
