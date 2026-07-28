@@ -63,7 +63,16 @@ Reusable tools — currently a `PreToolUse` hook that logs every tool invocation
 Skills for working with Rhizome — UI navigation and local REST API.
 
 - [Navigate Rhizome user interface](plugins/rhizome/skills/navigate-rhizome-user-interface/SKILL.md)
-- [Rhizome REST API](plugins/rhizome/skills/rhizome-rest-api/SKILL.md)
+- [Rhizome REST API](plugins/rhizome/skills/rhizome-rest-api/SKILL.md) — development against a local instance
+
+#### plurama-user
+
+Using the deployed plurama apps as a user, via `plurama-cli`.
+
+- [plurama-cli](plugins/plurama-user/skills/plurama-cli/SKILL.md)
+- [tracker-user](plugins/plurama-user/skills/tracker-user/SKILL.md)
+- [rhizome-user](plugins/plurama-user/skills/rhizome-user/SKILL.md)
+- [rhizome-books](plugins/plurama-user/skills/rhizome-books/SKILL.md)
 
 #### editor-layouts
 

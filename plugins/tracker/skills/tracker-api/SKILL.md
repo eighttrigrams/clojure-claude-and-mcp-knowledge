@@ -1,6 +1,6 @@
 ---
 name: tracker-api
-description: Tracker's HTTP API — authenticate as a machine user, read tasks/meets/journals/today-board, ingest mail messages, write through the recording-mode gate via curl
+description: Tracker's HTTP API mechanics — the /api/describe catalogue, dev-mode vs production auth, machine users and their lean list reads, and the recording-mode gate on machine writes. For what tracker holds and how to query it well, see the tracker-user skill.
 ---
 
 # Tracker API
@@ -15,67 +15,24 @@ The same `/api/*` endpoints the UI uses are also the machine-callable
 endpoints — what changes is *who* is calling and *whether the recording-mode
 gate applies*.
 
-## What tracker covers (scope)
+What tracker covers, and how to read and write it well, is the `tracker-user`
+skill (plugin `plurama-user`). This skill is the technical side: the endpoint
+catalogue, caller identity, auth, and the recording-mode gate.
 
-Tracker is not only tasks. A single user's tracker holds **tasks, meetings
-("meets") and meeting series, recurring tasks, journals and journal entries,
-saved resources (links and videos), mottos**, and **"sources"** — the user's
-**YouTube channel subscriptions, podcast feeds, and Atom/RSS feeds** plus
-their per-source settings. People / places / projects / goals are the
-categories that tie items together through relations.
+## Machine-user list reads
 
-So questions about the user's **YouTube subscriptions, saved YouTube videos,
-podcasts, or RSS feeds are in scope** and are answered from tracker — do
-**not** treat them as an external account you cannot reach. Subscriptions
-are under `/api/sources/youtube/channels`; saved videos/links are
-`resources` (`/api/resources`); podcast and feed sources under
-`/api/sources/podcast` and `/api/sources/atom`. For broad reads, prefer the
-specific resource endpoint (`/api/tasks`, `/api/meets`, `/api/resources`,
-`/api/sources/...`) over `/api/today-board`, which only covers *today*. When
-unsure of the exact path, consult `/api/describe` (below) — never refuse on
-the assumption that tracker does not track something.
+For machine-user (bot) callers, list reads on `/api/tasks`, `/api/meets`,
+`/api/resources`, `/api/journals`, `/api/journal-entries`,
+`/api/recurring-tasks`, `/api/meeting-series` return **lean rows**:
+`description` and `tags` are stripped, and the default cap is **100** (not
+10). `?detail=full` restores the body text; `/api/today-board` is never
+stripped.
 
-## Answering completely: act, filter, and size the read
-
-- **Act on reads.** For a read-only question, fetch the data and answer —
-  do **not** ask permission first ("shall I list them?"). Only ask back when
-  the request is genuinely ambiguous.
-- **Find the filter before saying "no".** List endpoints take query params
-  (look them up in `/api/describe`): `resources` filter by
-  `domain`/`excluded-domains`, tasks by scope/importance/urgency/category,
-  meets by date/category. "My Google Docs" or "links from X" is a `domain`
-  filter on `/api/resources` — a domain is **not** a category and **not** a
-  missing feature.
-- **Put query params in the path, not a body.** For GET reads, encode every
-  query parameter directly in the path query string —
-  `GET /api/tasks?category=Acme&due-date=2026-06-22&limit=100`. Parameters
-  placed in a separate body/`query`/`params` field are dropped on a GET, so
-  the filter and limit silently have no effect and you fall back to the
-  default capped list (the machine-user list cap below). `body` is only for
-  the JSON payload of POST/PUT writes.
-- **Lean rows by default — so enumerate and count freely.** For machine-user
-  (bot) callers, list reads on `/api/tasks`, `/api/meets`, `/api/resources`,
-  `/api/journals`, `/api/journal-entries`, `/api/recurring-tasks`,
-  `/api/meeting-series` return **lean rows**: `description` and `tags` are
-  stripped, and the default cap is **100** (not 10). Lean rows are cheap, so
-  for "all / how many / which" questions just filter and read the full
-  set — listing titles and counting need no special care. Only for genuinely
-  huge sets ("every task I have ever created") pass an explicit `?limit` /
-  paginate and state the scope you covered. Explicit counts ("top 5", "next 3")
-  → pass that as `?limit`.
-- **Ask for detail only when needed.** To get the actual `description` / body
-  text of list items, add `?detail=full` (e.g.
-  `/api/tasks?category=Acme&detail=full`) — use it when the user wants the
-  contents, not for counting or listing titles. For one item's full detail,
-  prefer `GET /api/<type>/:id`.
-- **Today and the next few days.** `/api/today-board` is the bounded,
-  full-detail view (never stripped). It is today-only by default; pass
-  `?days=N` to widen the meeting window to today..today+N for "the next few
-  days" / the Today page. Reach for it on "what's on today / coming up"
-  instead of scanning all tasks.
-- **Aggregate across types** when the question spans them ("everything on
-  Monday" = tasks **and** meets), and say which sources you checked. Never
-  call a single filtered list "all" without confirming it covers the question.
+For GET reads, encode query parameters in the path query string —
+`GET /api/tasks?category=Acme&due-date=2026-06-22&limit=100`. Parameters
+placed in a separate body/`query`/`params` field are dropped on a GET, so the
+filter and limit silently have no effect and you fall back to the default
+capped list. `body` is only for the JSON payload of POST/PUT writes.
 
 ## Endpoint catalogue — ask the server
 
@@ -95,10 +52,6 @@ curl -sf http://127.0.0.1:3027/api/describe | jq '.[] | {ns, name}'
 curl -sf http://127.0.0.1:3027/api/describe \
   | jq '.[] | select(.doc | startswith("POST /api/tasks"))'
 ```
-
-If a user asks about a "view", "filter", "sort", or "tab" you don't
-recognise (e.g. "saved", "archived", "today"), look it up in
-`/api/describe` before answering — do not assume it doesn't exist.
 
 ## Caller identity: regular users vs machine users
 
@@ -189,11 +142,3 @@ user.
 Two writes — create the task, then flip its `today` flag — and **both** hit
 the gate, so recording mode must be ON for a machine user to land them.
 Look up the exact endpoints + bodies in `/api/describe`.
-
-## Response-shape notes
-
-A few shape details that aren't obvious from `/api/describe` docstrings:
-
-- Task `done` and `today` are integers (`0`/`1`), not booleans.
-- YouTube / Substack URLs posted to `/api/resources` auto-fetch their
-  title server-side.

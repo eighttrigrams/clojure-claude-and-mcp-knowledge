@@ -36,14 +36,14 @@
     {
       "name": "rhizome",
       "source": "./plugins/rhizome",
-      "description": "Skills for working with Rhizome — UI navigation and local REST API",
-      "version": "1.0.9"
+      "description": "Skills for developing Rhizome — UI navigation and its local REST API",
+      "version": "1.1.0"
     },
     {
       "name": "tracker",
       "source": "./plugins/tracker",
-      "description": "Skills for working with Tracker — local REST API for reading and writing tasks",
-      "version": "1.0.5"
+      "description": "Skills for developing Tracker — its UI and its Telegram bot",
+      "version": "1.1.0"
     },
     {
       "name": "integrations",
@@ -60,8 +60,14 @@
     {
       "name": "plurama",
       "source": "./plugins/plurama",
-      "description": "Conventions for apps composed under the plurama umbrella JVM (migrations namespacing) and the plurama-cli client for their deployed HTTP APIs",
-      "version": "1.1.0"
+      "description": "Conventions for apps composed under the plurama umbrella JVM (migrations namespacing)",
+      "version": "1.2.0"
+    },
+    {
+      "name": "plurama-user",
+      "source": "./plugins/plurama-user",
+      "description": "Skills for using the deployed plurama apps as a user — the plurama-cli client and how to use tracker and rhizome",
+      "version": "1.0.0"
     },
     {
       "name": "security",

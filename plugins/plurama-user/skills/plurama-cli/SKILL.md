@@ -1,12 +1,12 @@
 ---
 name: plurama-cli
-description: How to talk to the deployed plurama apps (treina, …) from the shell with the plurama-cli command — a curl-like client that carries baked-in prod credentials. Use whenever a task means reading or writing live plurama app data over HTTP, when `plurama-cli` is missing or unauthorized, or when a new app must be added to it.
+description: How to talk to the deployed plurama apps (treina, tracker, personalist, rhizome …) from the shell with the plurama-cli command — a curl-like client.
 ---
 
 # plurama-cli — talking to the deployed plurama apps
 
-`plurama-cli` is a babashka script that calls the **production** HTTP APIs of
-the plurama apps. It is the way to read and write live app data from a shell.
+`plurama-cli` is a babashka script that calls the HTTP APIs of
+the live plurama apps. It is the way to read and write live app data from a shell.
 
 ```bash
 plurama-cli treina /api/describe
