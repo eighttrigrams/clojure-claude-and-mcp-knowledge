@@ -57,12 +57,3 @@ Guidelines for structuring code.
 #### log-tool-calls
 
 A `PreToolUse` hook that logs every tool invocation to `logs/hooks.log`.
-
-#### plurama-user
-
-Using the deployed plurama apps as a user, via `plurama-cli`.
-
-- [plurama-cli](plugins/plurama-user/skills/plurama-cli/SKILL.md)
-- [tracker-user](plugins/plurama-user/skills/tracker-user/SKILL.md)
-- [rhizome-user](plugins/plurama-user/skills/rhizome-user/SKILL.md)
-- [rhizome-books](plugins/plurama-user/skills/rhizome-books/SKILL.md)

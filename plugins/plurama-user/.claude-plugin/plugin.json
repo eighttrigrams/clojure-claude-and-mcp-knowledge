@@ -1,8 +1,0 @@
-{
-  "name": "plurama-user",
-  "description": "Skills for using the deployed plurama apps as a user — the plurama-cli client and how to use tracker and rhizome",
-  "version": "1.0.0",
-  "author": {
-    "name": "eighttrigrams"
-  }
-}

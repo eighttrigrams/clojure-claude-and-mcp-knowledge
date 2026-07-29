@@ -34,12 +34,6 @@
       "version": "1.0.0"
     },
     {
-      "name": "plurama-user",
-      "source": "./plugins/plurama-user",
-      "description": "Skills for using the deployed plurama apps as a user — the plurama-cli client and how to use tracker and rhizome",
-      "version": "1.0.0"
-    },
-    {
       "name": "security",
       "source": "./plugins/security",
       "description": "Security skills — sandboxing, isolation, and least-privilege patterns",
