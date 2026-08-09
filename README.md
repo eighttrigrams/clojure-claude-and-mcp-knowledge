@@ -30,6 +30,7 @@ See also
 - [How to Install Claude Code](./recipes/how-to-install-claude-code.md)
 - [Working with MCP](./recipes/working-with-mcp.md)
 - [Docker Claude Container](./recipes/docker-claude-container.md)
+- [Writing a Hook Plugin That Rewrites a Tool Call](./recipes/writing-a-hook-plugin.md)
 
 ## Issues
 
@@ -57,3 +58,11 @@ Guidelines for structuring code.
 #### log-tool-calls
 
 A `PreToolUse` hook that logs every tool invocation to `logs/hooks.log`.
+
+#### git-identity
+
+A `PreToolUse` hook that stamps `Claude <claude@eighttrigrams.net>` onto any Bash
+call that commits, so agent commits are never signed as mine.
+
+- Rewrites the command to `export` the four `GIT_AUTHOR_*`/`GIT_COMMITTER_*` variables on a line of their own, ahead of the original — a `VAR=x cmd` prefix would reach only the first command of a `git add . && git commit`
+- Returns no `permissionDecision`, so it rewrites the command without granting it — `"allow"` would wave the whole line through, and `"defer"` hands the call back to the caller and discards the rewrite

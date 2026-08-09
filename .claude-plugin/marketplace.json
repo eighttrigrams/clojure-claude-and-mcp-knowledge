@@ -38,6 +38,12 @@
       "source": "./plugins/security",
       "description": "Security skills — sandboxing, isolation, and least-privilege patterns",
       "version": "1.0.0"
+    },
+    {
+      "name": "git-identity",
+      "source": "./plugins/git-identity",
+      "description": "A PreToolUse hook that stamps the agent's git identity onto any Bash call that commits",
+      "version": "1.0.0"
     }
   ]
 }
