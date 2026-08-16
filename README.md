@@ -55,6 +55,13 @@ Guidelines for structuring code.
 - [Architecture review](plugins/architecture/skills/architecture-review/SKILL.md)
 - [Writing tests](plugins/architecture/skills/writing-tests/SKILL.md)
 
+#### vscode-plugins
+
+Knowledge about my VS Code extensions, which live in
+[eighttrigrams/vscode-plugins](https://github.com/eighttrigrams/vscode-plugins).
+
+- [editor-layouts](plugins/vscode-plugins/skills/editor-layouts/SKILL.md) — the `.editor-layouts.json` schema the `save-editor-layout` extension reads and writes
+
 #### log-tool-calls
 
 A `PreToolUse` hook that logs every tool invocation to `logs/hooks.log`.

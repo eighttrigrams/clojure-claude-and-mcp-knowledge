@@ -1,0 +1,8 @@
+{
+  "name": "vscode-plugins",
+  "description": "Knowledge about the VS Code extensions from eighttrigrams/vscode-plugins",
+  "version": "1.0.0",
+  "author": {
+    "name": "eighttrigrams"
+  }
+}

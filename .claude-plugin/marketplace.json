@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Clojure and architecture skills for Claude Code",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "pluginRoot": "./plugins"
   },
   "plugins": [
@@ -43,6 +43,12 @@
       "name": "git-identity",
       "source": "./plugins/git-identity",
       "description": "A PreToolUse hook that stamps the agent's git identity onto any Bash call that commits",
+      "version": "1.0.0"
+    },
+    {
+      "name": "vscode-plugins",
+      "source": "./plugins/vscode-plugins",
+      "description": "Knowledge about the VS Code extensions from eighttrigrams/vscode-plugins",
       "version": "1.0.0"
     }
   ]
